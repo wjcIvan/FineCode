@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>弹幕页面</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+		<style type="text/css">
+			html,
+			body {
+				position: relative;
+				height: 100%;
+				width: 100%;
+				padding: 0;
+				margin: 0;
+			}
+
+			#danmu>div {
+				padding: 2px;
+				font-size: 25px;
+				margin: 10px;
+				font: "agency fb";
+				opacity: 0.6;
+			}
+
+			#interaction {
+				position: absolute;
+				bottom: 0px;
+				width: 100%;
+			}
+
+			#interaction>div {
+				float: left;
+				margin: 6px;
+				/* background-color: beige; */
+				height: 40px;
+			}
+
+			#tucao {
+				width: 340px;
+			}
+
+			#danmu {
+				width: 100%;
+				height: 500px;
+				/* background: gray; */
+				position: relative;
+				overflow: auto;
+			}
+
+			.bullet {
+				position: absolute;
+				/*right: 0;*/
+				/*left:1600px;*/
+				word-break: keep-all;
+				/*不让单词折行*/
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="danmu">
+			<div>一个不愿意透露姓名的过客：123456</div>
+			<div>吃瓜群众：666666</div>
+			<div>世界聚焦于你：4396777</div>
+			<div>嘴强王者：菜马浪five</div>		
+		</div>
+		<div id="interaction">
+			<div id="guanzhu">
+				<img src="image/guanzhu.svg">
+			</div>
+			<div id="tucao">
+				<input type="text" name="test" id="input" value="" />
+			</div>
+			<div id="hudong">
+				<img src="image/hudong.svg">
+			</div>
+			<div id="chongzhi">
+				<img src="image/chongzhi.svg">
+			</div>
+			<div id="gift" onclick="giftPage();">
+				<img src="image/liwu.svg">
+			</div>
+		</div>
+		<script src="js/mui.js"></script>
+		<script src="js/jquery-3.3.1.min.js"></script>
+		<script src="js/h.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			function giftPage() {
+				mui.openWindow({
+					url: "sub3_1_1_1.html",
+					id: "sub3_1_1_1.html",
+					styles: {
+						top: 600,
+						bottom: 0
+					}
+				})
+			}
+			var indexSearchPut = document.getElementById("input");
+			indexSearchPut.addEventListener("keyup", function(e) {
+				if (e.keyCode == 13) {
+					//console.log("133333333");
+					var msg = this.value;
+					//console.log("msg:" + msg);
+					//var msg = $("input").val();
+					//取出输入框内容 
+					if (msg.length=="") {
+						alert("弹幕不能为空！");
+						return;
+					}else if (msg.length > 15) {
+						alert("字数不得超过15个！");
+						return;
+					}
+					var danmu = document.getElementById("danmu");
+					var div1=document.createElement("div");
+					div1.innerText="wjcIvan:"+msg;
+					danmu.appendChild(div1);
+					var bullet = $("<div>");
+					// console.log("1:" + bullet);
+					//生成一条弹幕 
+					bullet.text(msg);
+					//将输入框内容放置到div中 
+					bullet.addClass("bullet");
+					//为bullet这个div添加样式bullet 
+					bullet.css("top", Math.round(Math.random() * 500));
+					//随机设置弹幕位置 
+					bullet.css("left", "1000px");
+					bullet.css("font-size", Math.round(Math.random() * 60) + 12 + "px");
+					bullet.css("color", "rgb(" + Math.round(Math.random() * 255) + "," + Math.round(Math.random() * 255) + "," +
+						Math.round(Math.random() * 255) + ")");
+					//    alert(window.getComputedStyle(bullet,null).width); 
+					bullet.animate({
+						left: -1000 //此处视为bug，应该随着弹幕的长短而变化 
+					}, Math.round(Math.random() * 5000) + 1000, "linear", function() {
+						bullet.remove();
+						//当运动结束时，删除弹幕 
+					});
+					$("#danmu").append(bullet);
+					$("input[name='test']").val("").focus();
+					//top.document.getElementById("content").appendChild(bullet);
+				}
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>斗鱼</title>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style type="text/css">
+			body {
+				margin: 0;
+				padding: 0;
+				height: 100%;
+				width: 100%;
+			}
+
+			.mui-bar {
+				height: 8%;
+				position: absolute;
+				border-style: none;
+			}
+
+			#head {
+				background-image: url(image/touxiang.svg);
+				background-repeat: no-repeat;
+				width: 10%;
+				height: 84%;
+				background-size: cover;
+			}
+
+			#input {
+				height: 65%;
+				position: absolute;
+				left: 14%;
+				width: 63%;
+				top: 15%;
+				border-radius: 25px;
+				display: block;
+			}
+
+			#history {
+				position: absolute;
+				height: 100%;
+				top: 0%;
+				width: 10%;
+				right: 16%;
+				background-image: url(image/lishi.svg);
+				background-repeat: no-repeat;
+				background-size: contain;
+			}
+
+			#history,
+			#message {
+				position: absolute;
+				height: 100%;
+				top: 22%;
+				width: 6%;
+				right: 12%;
+				background-repeat: no-repeat;
+				background-size: contain;
+			}
+
+			#message {
+				right: 2%;
+				background-image: url(image/message.svg);
+			}
+
+			#indexCate,
+			header,
+			#indexCate2,
+			#indexCate3,
+			#indexCate4 {
+				background-image: linear-gradient(90deg, #fd962d, #ff6b23);
+				position: relative;
+				top: 24px;
+				height: 60px;
+				font-size: 20px;
+				line-height: 80px;
+				z-index: 998;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<div id="head"></div>
+			<input type="text" name="" id="input" class="inputstyle" onfocus='if(this.value=="XDD"){this.value="";};' onblur='if(this.value==""){this.value="XDD";};'
+			 value="XDD" />
+			<div id="history"></div>
+			<div id="message"></div>
+		</header>
+		<nav class="mui-bar mui-bar-tab">
+			<a class="mui-tab-item mui-active" href="#home">
+				<span class="mui-icon mui-icon-videocam"></span>
+				<span class="mui-tab-label">推荐</span>
+			</a>
+			<a class="mui-tab-item" href="#forFun">
+				<span class="mui-icon mui-icon-starhalf"></span>
+				<span class="mui-tab-label">娱乐</span>
+			</a>
+			<a class="mui-tab-item" href="#care">
+				<span class="mui-icon mui-icon-compose"></span>
+				<span class="mui-tab-label">关注</span>
+			</a>
+			<a class="mui-tab-item" href="#fishHome">
+				<span class="mui-icon mui-icon-home"></span>
+				<span class="mui-tab-label">鱼吧</span>
+			</a>
+			<a class="mui-tab-item" href="#discovery">
+				<span class="mui-icon mui-icon-navigate"></span>
+				<span class="mui-tab-label">发现</span>
+			</a>
+		</nav>
+
+		<div class="mui-content">
+			<!-- 首页 -->
+			<div class="mui-control-content mui-active" id="home">
+				<div id="indexCate" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+					<div class="mui-scroll">
+						<a class="mui-control-item" v-for="(item,index) in cate" v-bind:id="index">{{item}}</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- 娱乐 -->
+			<div class="mui-control-content" id="forFun">
+				<div id="indexCate2" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+					<div class="mui-scroll">
+						<a class="mui-control-item" v-for="(item,index) in cate2" v-bind:id="index">{{item}}</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- 关注 -->
+			<div class="mui-control-content" id="care">
+				<div id="indexCate3" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+					<div class="mui-scroll">
+						<a class="mui-control-item" v-for="(item,index) in cate3" v-bind:id="index">{{item}}</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- 鱼吧 -->
+			<div class="mui-control-content" id="fishHome">
+				<div id="indexCate4" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+					<div class="mui-scroll">
+						<a class="mui-control-item" v-for="(item,index) in cate4" v-bind:id="index">{{item}}</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- 发现 -->
+			<div class="mui-control-content" id="discovery"></div>
+		</div>
+	</body>
+	<script src="js/mui.min.js"></script>
+	<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" charset="utf-8">
+		mui.plusReady(function() {			
+			mui(".mui-scroll").on("tap", ".mui-control-item", function() {
+				var index = this.getAttribute("id");
+				var cur = plus.webview.getWebviewById("contentHtml");
+				//console.log(cur);
+				//判断是否是此页面
+				if (cur.getURL() != "sub" + index + ".html") {
+					cur.loadURL("sub" + index + ".html")
+				}
+			});
+			/* mui(".mui-content").on("tap", "#forFun", function() {
+				console.log(1111);
+				var index = this.getAttribute("id");
+				var cur = plus.webview.getWebviewById("contentHtml");
+				cur.loadURL("sub4.html");
+			}); */
+		});
+		
+		mui.init({
+			subpages: [{
+				url: "sub2.html",
+				id: "contentHtml",
+				styles: {
+					top: "120px",
+					bottom: "60px"
+				}
+			}]
+		});
+		var demo = new Vue({
+			el: "#indexCate",
+			data: {
+				cate: {
+					"1": "全部",
+					"2": "推荐",
+					"3": "LOL",
+					"4": "DOTA2",
+					"5": "绝地求生",
+					"6": "王者荣耀",
+					"7": "堡垒之夜",
+					"8": "主机游戏",
+					"9": "体育直播",
+					"10": "刺激战场"
+				}
+			}
+		});
+		new Vue({
+			el: "#indexCate2",
+			data: {
+				cate2: {
+					"4": "推荐",
+					"5": "颜值",
+					"6": "户外",
+					"7": "二次元",
+					"15": "音乐",
+					"16": "语音直播",
+					"17": "美食",
+					"18": "科技教育",
+					"19": "一起看",
+					"20": "星娱",
+					"21": "原创IP",
+					"22": "正能量"
+				}
+			}
+		});
+		new Vue({
+			el: "#indexCate3",
+			data: {
+				cate3: {
+					"9": "直播",
+					"10": "视频",
+					"12": "动态"
+				}
+			}
+		});
+		new Vue({
+			el: "#indexCate4",
+			data: {
+				cate4: {
+					"1": "推荐",
+					"2": "我的",
+					"3": "斗鱼直播吧"
+				}
+			}
+		});
+	</script>
+</html>
