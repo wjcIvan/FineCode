@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.javen.dao.IUserDao" >
+  <resultMap id="BaseResultMap" type="com.javen.model.User" >
+    <id column="uid" property="uid" jdbcType="INTEGER" />
+    <result column="user" property="user" jdbcType="VARCHAR" />
+    <result column="pswd" property="pswd" jdbcType="VARCHAR" />
+    <result column="sex" property="sex" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="icon" property="icon" jdbcType="VARCHAR" />
+    <result column="credit" property="credit" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, user_name, password, age
+  </sql>
+  
+   <insert id="save" parameterType="com.javen.model.User" >
+    insert into users (user, pswd, sex, name,icon,credit) values (#{user,jdbcType=VARCHAR}, #{pswd,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR},#{name,jdbcType=VARCHAR}, #{icon,jdbcType=VARCHAR},#{credit,jdbcType=INTEGER} )
+  </insert>
+  
+  
+  	<select id="searchAll"  resultMap="BaseResultMap">  
+        SELECT * FROM users  
+    </select>  
+  
+    <select id="searchUid" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    	select * from users where user = #{user,jdbcType=VARCHAR}
+  </select>
+    <select id="searchUid2" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    	select * from users where uid = #{uid,jdbcType=INTEGER}
+  </select>
+  <select id="login" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    	select * from users where user = #{0} AND pswd = #{1}
+  </select>
+  
+    <update id="update" parameterType="com.javen.model.User" >
+    update users
+    set user = #{user,jdbcType=VARCHAR},
+      pswd = #{pswd,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=INTEGER},
+      name = #{name,jdbcType=INTEGER},
+      icon = #{icon,jdbcType=INTEGER}
+    where uid = #{uid,jdbcType=INTEGER}
+  </update>
+  
+  
+  	<delete id="delete" parameterType="java.lang.Integer">
+		delete from users
+		where uid = #{uid,jdbcType=INTEGER}
+	</delete>
+	
+	
+	<update id="updateXY" parameterType="com.javen.model.User" >
+    update users
+    set credit = #{0}
+    where uid = #{1}
+  </update> 
+  
+
+
+
+</mapper>

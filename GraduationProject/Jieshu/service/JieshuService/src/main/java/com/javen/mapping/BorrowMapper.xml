@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.javen.dao.IBorrowDao">
+	<resultMap id="BaseResultMap" type="com.javen.model.Borrow">
+		<id column="brid" property="brid" jdbcType="INTEGER" />
+		<id column="bid" property="bid" jdbcType="INTEGER" />
+		<id column="uid" property="uid" jdbcType="INTEGER" />
+		<id column="statu" property="statu" jdbcType="INTEGER" />
+		<result column="time" property="time" jdbcType="VARCHAR" />
+	</resultMap>
+	
+	
+	
+	<select id="search"  resultType="java.util.Map">
+	
+		select * from borrow br left join book b on br.bid=b.bid left join shujia s on s.sid=b.sid  where br.statu= #{0}
+	
+	
+	</select>
+	<select id="searchUid"  resultType="java.util.Map">
+	
+		select * from borrow br left join book b on br.bid=b.bid left join shujia s on s.sid=b.sid  where br.statu= #{0} and br.uid= #{1}
+	
+	
+	</select>
+
+
+	<insert id="save" parameterType="com.javen.model.Borrow">
+		insert into borrow (bid,uid,statu,time)
+		values (
+		#{bid},
+		#{uid},
+		#{statu},
+		#{time})
+	</insert>
+
+
+	
+	
+	
+	 <update id="updateStatu">
+		   update borrow set statu = #{1} where brid = #{0}
+  </update>
+
+
+<delete id="delete" parameterType="java.lang.Integer">
+		delete from borrow
+		where brid = #{brid,jdbcType=INTEGER}
+	</delete>
+
+
+</mapper>

@@ -1,0 +1,59 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>剧院后台管理系统</title>
+		<link href="css/style.css" rel='stylesheet' type='text/css' />
+		<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300italic,300,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Multi Column Widget Responsive, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates, Flat Web Templates, Login Sign-up Responsive Web Template, Smartphone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design" />
+		<link rel="stylesheet" href="layui/css/layui.css">
+	</head>
+
+	<body>
+		<h1>剧院后台管理系统</h1>
+		<div class="main-agileits" >
+			<div class="sign-in-wthree">
+				<div class="sign-in-top-agileinfo">
+					<h2>登  录</h2>
+				</div>
+				<div class="sign-in-bottom-agileinfo">
+					<form action="#" method="post">
+						<h3>用户名</h3>
+						<input type="text" id="user" required=" ">
+						<h3>密码</h3>
+						<input type="password" id="password" required=" ">
+						<input style="width: 91.5%" class="layui-btn layui-btn-radius" type="button" value="登  录" onclick="login()"/>
+
+					</form>
+				</div>
+			</div>
+
+		</div>
+		
+		<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+		<script>
+			function login(){
+				var user = document.getElementById('user').value;
+				var pswd = document.getElementById('password').value;
+				if(user == "admin"&&pswd=="admin"){
+					localStorage.setItem("page", 1);
+					window.location.href = 'main.jsp';
+				}else{
+					alert('用户名或密码输入有误');
+				}
+			}
+			
+			
+		</script>
+
+	</body>
+
+</html>

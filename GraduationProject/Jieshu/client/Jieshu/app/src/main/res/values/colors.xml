@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#009688</color>
+    <color name="colorPrimaryDark">#009688</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="huise">#bababa</color>
+    <color name="lvse">#009688</color>
+    <color name="beijing">#eaeaea</color>
+    <color name="white">#ffffff</color>
+    <color name="location_cri_color">#3dafaa93</color>
+</resources>

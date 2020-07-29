@@ -1,0 +1,290 @@
+[INFO] [2015-08-30 16:31:46][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+  [INFO] [2015-08-30 16:31:47][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Sun Aug 30 16:31:47 CST 2015]; root of context hierarchy
+  [INFO] [2015-08-30 16:31:47][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from ServletContext resource [/WEB-INF/applicationContext.xml]
+  [ERROR] [2015-08-30 16:31:47][org.springframework.web.context.ContextLoader]Context initialization failed
+  org.springframework.beans.factory.BeanDefinitionStoreException: IOException parsing XML document from ServletContext resource [/WEB-INF/applicationContext.xml]; nested exception is java.io.FileNotFoundException: Could not open ServletContext resource [/WEB-INF/applicationContext.xml]
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:343)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:303)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:180)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:216)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:187)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:125)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:94)
+	at org.springframework.context.support.AbstractRefreshableApplicationContext.refreshBeanFactory(AbstractRefreshableApplicationContext.java:129)
+	at org.springframework.context.support.AbstractApplicationContext.obtainFreshBeanFactory(AbstractApplicationContext.java:540)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:454)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:403)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:106)
+	at org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized(ContextHandler.java:800)
+	at org.eclipse.jetty.servlet.ServletContextHandler.callContextInitialized(ServletContextHandler.java:444)
+	at org.eclipse.jetty.server.handler.ContextHandler.startContext(ContextHandler.java:791)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:294)
+	at org.eclipse.jetty.webapp.WebAppContext.startWebapp(WebAppContext.java:1349)
+	at org.eclipse.jetty.maven.plugin.JettyWebAppContext.startWebapp(JettyWebAppContext.java:296)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1342)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:741)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:505)
+	at org.eclipse.jetty.maven.plugin.JettyWebAppContext.doStart(JettyWebAppContext.java:365)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:114)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.doStart(ContextHandlerCollection.java:163)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:114)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132)
+	at org.eclipse.jetty.server.Server.start(Server.java:387)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:114)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:354)
+	at org.eclipse.jetty.maven.plugin.JettyServer.doStart(JettyServer.java:73)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.maven.plugin.AbstractJettyMojo.startJetty(AbstractJettyMojo.java:534)
+	at org.eclipse.jetty.maven.plugin.AbstractJettyMojo.execute(AbstractJettyMojo.java:357)
+	at org.eclipse.jetty.maven.plugin.JettyRunMojo.execute(JettyRunMojo.java:167)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:208)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:862)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:286)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:197)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+Caused by: java.io.FileNotFoundException: Could not open ServletContext resource [/WEB-INF/applicationContext.xml]
+	at org.springframework.web.context.support.ServletContextResource.getInputStream(ServletContextResource.java:141)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:329)
+	... 64 more
+[INFO] [2015-08-30 16:40:10][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+  [INFO] [2015-08-30 16:40:10][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Sun Aug 30 16:40:10 CST 2015]; root of context hierarchy
+  [INFO] [2015-08-30 16:40:10][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from ServletContext resource [/WEB-INF/applicationContext.xml]
+  [ERROR] [2015-08-30 16:40:10][org.springframework.web.context.ContextLoader]Context initialization failed
+  org.springframework.beans.factory.BeanDefinitionStoreException: IOException parsing XML document from ServletContext resource [/WEB-INF/applicationContext.xml]; nested exception is java.io.FileNotFoundException: Could not open ServletContext resource [/WEB-INF/applicationContext.xml]
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:343)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:303)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:180)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:216)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:187)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:125)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:94)
+	at org.springframework.context.support.AbstractRefreshableApplicationContext.refreshBeanFactory(AbstractRefreshableApplicationContext.java:129)
+	at org.springframework.context.support.AbstractApplicationContext.obtainFreshBeanFactory(AbstractApplicationContext.java:540)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:454)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:403)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:106)
+	at org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized(ContextHandler.java:800)
+	at org.eclipse.jetty.servlet.ServletContextHandler.callContextInitialized(ServletContextHandler.java:444)
+	at org.eclipse.jetty.server.handler.ContextHandler.startContext(ContextHandler.java:791)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:294)
+	at org.eclipse.jetty.webapp.WebAppContext.startWebapp(WebAppContext.java:1349)
+	at org.eclipse.jetty.maven.plugin.JettyWebAppContext.startWebapp(JettyWebAppContext.java:296)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1342)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:741)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:505)
+	at org.eclipse.jetty.maven.plugin.JettyWebAppContext.doStart(JettyWebAppContext.java:365)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:114)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.doStart(ContextHandlerCollection.java:163)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:114)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132)
+	at org.eclipse.jetty.server.Server.start(Server.java:387)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:114)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:354)
+	at org.eclipse.jetty.maven.plugin.JettyServer.doStart(JettyServer.java:73)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.maven.plugin.AbstractJettyMojo.startJetty(AbstractJettyMojo.java:534)
+	at org.eclipse.jetty.maven.plugin.AbstractJettyMojo.execute(AbstractJettyMojo.java:357)
+	at org.eclipse.jetty.maven.plugin.JettyRunMojo.execute(JettyRunMojo.java:167)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:208)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:862)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:286)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:197)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+Caused by: java.io.FileNotFoundException: Could not open ServletContext resource [/WEB-INF/applicationContext.xml]
+	at org.springframework.web.context.support.ServletContextResource.getInputStream(ServletContextResource.java:141)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:329)
+	... 64 more
+[INFO] [2015-08-30 16:48:01][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+  [INFO] [2015-08-30 16:48:01][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Sun Aug 30 16:48:01 CST 2015]; root of context hierarchy
+  [INFO] [2015-08-30 16:48:01][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from ServletContext resource [/WEB-INF/applicationContext.xml]
+  [ERROR] [2015-08-30 16:48:01][org.springframework.web.context.ContextLoader]Context initialization failed
+  org.springframework.beans.factory.BeanDefinitionStoreException: IOException parsing XML document from ServletContext resource [/WEB-INF/applicationContext.xml]; nested exception is java.io.FileNotFoundException: Could not open ServletContext resource [/WEB-INF/applicationContext.xml]
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:343)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:303)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:180)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:216)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:187)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:125)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:94)
+	at org.springframework.context.support.AbstractRefreshableApplicationContext.refreshBeanFactory(AbstractRefreshableApplicationContext.java:129)
+	at org.springframework.context.support.AbstractApplicationContext.obtainFreshBeanFactory(AbstractApplicationContext.java:540)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:454)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:403)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:106)
+	at org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized(ContextHandler.java:800)
+	at org.eclipse.jetty.servlet.ServletContextHandler.callContextInitialized(ServletContextHandler.java:444)
+	at org.eclipse.jetty.server.handler.ContextHandler.startContext(ContextHandler.java:791)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:294)
+	at org.eclipse.jetty.webapp.WebAppContext.startWebapp(WebAppContext.java:1349)
+	at org.eclipse.jetty.maven.plugin.JettyWebAppContext.startWebapp(JettyWebAppContext.java:296)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1342)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:741)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:505)
+	at org.eclipse.jetty.maven.plugin.JettyWebAppContext.doStart(JettyWebAppContext.java:365)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:114)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.doStart(ContextHandlerCollection.java:163)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:114)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132)
+	at org.eclipse.jetty.server.Server.start(Server.java:387)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:114)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:354)
+	at org.eclipse.jetty.maven.plugin.JettyServer.doStart(JettyServer.java:73)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.maven.plugin.AbstractJettyMojo.startJetty(AbstractJettyMojo.java:534)
+	at org.eclipse.jetty.maven.plugin.AbstractJettyMojo.execute(AbstractJettyMojo.java:357)
+	at org.eclipse.jetty.maven.plugin.JettyRunMojo.execute(JettyRunMojo.java:167)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:208)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:862)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:286)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:197)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+Caused by: java.io.FileNotFoundException: Could not open ServletContext resource [/WEB-INF/applicationContext.xml]
+	at org.springframework.web.context.support.ServletContextResource.getInputStream(ServletContextResource.java:141)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:329)
+	... 64 more
+[INFO] [2015-08-30 16:49:26][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization started
+  [INFO] [2015-08-30 16:49:27][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Sun Aug 30 16:49:27 CST 2015]; root of context hierarchy
+  [INFO] [2015-08-30 16:49:27][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mvc.xml]
+  [INFO] [2015-08-30 16:49:28][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2015-08-30 16:49:28][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/user/test],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.javen.controller.UserController.test(javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+  [INFO] [2015-08-30 16:49:29][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/resources] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+  [INFO] [2015-08-30 16:49:29][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization completed in 2946 ms
+  [WARN] [2015-08-30 16:49:46][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/user/test/1] in DispatcherServlet with name 'SpringMVC'
+  [INFO] [2015-08-30 16:58:03][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization started
+  [INFO] [2015-08-30 16:58:03][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Sun Aug 30 16:58:03 CST 2015]; root of context hierarchy
+  [INFO] [2015-08-30 16:58:03][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mvc.xml]
+  [INFO] [2015-08-30 16:58:03][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2015-08-30 16:58:03][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/user/test],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.javen.controller.UserController.test(javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+  [INFO] [2015-08-30 16:58:04][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/resources] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+  [INFO] [2015-08-30 16:58:04][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization completed in 1476 ms
+  [INFO] [2015-08-30 17:34:30][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+  [INFO] [2015-08-30 17:34:31][org.springframework.context.support.GenericApplicationContext]Refreshing org.springframework.context.support.GenericApplicationContext@2ef9b8bc: startup date [Sun Aug 30 17:34:31 CST 2015]; root of context hierarchy
+  [INFO] [2015-08-30 17:34:32][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+  [INFO] [2015-08-30 17:34:32][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2015-08-30 17:34:34][com.javen.testmybatis.TestMyBatis]{"age":10,"id":2,"password":"123","userName":"javen"}
+  [INFO] [2015-08-30 17:34:34][org.springframework.context.support.GenericApplicationContext]Closing org.springframework.context.support.GenericApplicationContext@2ef9b8bc: startup date [Sun Aug 30 17:34:31 CST 2015]; root of context hierarchy
+  [INFO] [2015-08-30 17:37:35][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+  [INFO] [2015-08-30 17:37:35][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Sun Aug 30 17:37:35 CST 2015]; root of context hierarchy
+  [INFO] [2015-08-30 17:37:35][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+  [INFO] [2015-08-30 17:37:36][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+  [INFO] [2015-08-30 17:37:36][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2015-08-30 17:37:36][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 1173 ms
+  [INFO] [2015-08-30 17:37:40][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization started
+  [INFO] [2015-08-30 17:37:40][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Sun Aug 30 17:37:40 CST 2015]; parent: Root WebApplicationContext
+  [INFO] [2015-08-30 17:37:40][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mvc.xml]
+  [INFO] [2015-08-30 17:37:41][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2015-08-30 17:37:44][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/user/test],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.javen.controller.UserController.test(javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+  [INFO] [2015-08-30 17:37:44][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/user/showUser],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.javen.controller.UserController.toIndex(javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+  [INFO] [2015-08-30 17:37:44][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/user/doUpload],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.javen.controller.UserController.doUploadFile(org.springframework.web.multipart.MultipartFile) throws java.io.IOException
+  [INFO] [2015-08-30 17:37:44][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/user/{id}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.javen.model.User com.javen.controller.UserController.getUserInJson(java.lang.String,java.util.Map<java.lang.String, java.lang.Object>)
+  [INFO] [2015-08-30 17:37:44][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/user/upload],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.javen.controller.UserController.showUploadPage()
+  [INFO] [2015-08-30 17:37:44][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/user/showUser3/{id}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.javen.controller.UserController.toIndex3(java.lang.String,java.util.Map<java.lang.String, java.lang.Object>)
+  [INFO] [2015-08-30 17:37:44][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/user/jsontype/{id}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.http.ResponseEntity<com.javen.model.User> com.javen.controller.UserController.getUserInJson2(java.lang.String,java.util.Map<java.lang.String, java.lang.Object>)
+  [INFO] [2015-08-30 17:37:44][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/user/showUser2],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.javen.controller.UserController.toIndex2(java.lang.String,org.springframework.ui.Model)
+  [INFO] [2015-08-30 17:37:45][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/resources] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+  [INFO] [2015-08-30 17:37:45][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization completed in 4837 ms
+  [INFO] [2015-08-30 17:38:22][com.javen.controller.UserController]User [id=2, userName=javen, password=123, age=10]
+  [INFO] [2019-03-06 14:32:12][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+  [INFO] [2019-03-06 14:32:12][org.springframework.context.support.GenericApplicationContext]Refreshing org.springframework.context.support.GenericApplicationContext@5ae76500: startup date [Wed Mar 06 14:32:12 CST 2019]; root of context hierarchy
+  [INFO] [2019-03-06 14:32:13][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+  [INFO] [2019-03-06 14:32:13][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2019-03-06 14:32:14][org.springframework.context.support.GenericApplicationContext]Closing org.springframework.context.support.GenericApplicationContext@5ae76500: startup date [Wed Mar 06 14:32:12 CST 2019]; root of context hierarchy
+  [INFO] [2019-03-06 14:33:06][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+  [INFO] [2019-03-06 14:33:07][org.springframework.context.support.GenericApplicationContext]Refreshing org.springframework.context.support.GenericApplicationContext@5ae76500: startup date [Wed Mar 06 14:33:06 CST 2019]; root of context hierarchy
+  [INFO] [2019-03-06 14:33:07][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+  [INFO] [2019-03-06 14:33:07][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2019-03-06 14:33:08][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+  [INFO] [2019-03-06 14:33:08][org.springframework.context.support.GenericApplicationContext]Refreshing org.springframework.context.support.GenericApplicationContext@5ae76500: startup date [Wed Mar 06 14:33:08 CST 2019]; root of context hierarchy
+  [INFO] [2019-03-06 14:33:09][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+  [INFO] [2019-03-06 14:33:09][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2019-03-06 14:33:09][org.springframework.context.support.GenericApplicationContext]Closing org.springframework.context.support.GenericApplicationContext@5ae76500: startup date [Wed Mar 06 14:33:06 CST 2019]; root of context hierarchy
+  [INFO] [2019-03-06 14:33:10][org.springframework.context.support.GenericApplicationContext]Closing org.springframework.context.support.GenericApplicationContext@5ae76500: startup date [Wed Mar 06 14:33:08 CST 2019]; root of context hierarchy
+  [ERROR] [2019-03-13 14:18:43][sdk.biz.err]ErrorScene^_^40002^_^isv.invalid-app-id^_^null^_^Windows 7^_^2019-03-13 14:18:43^_^ProtocalMustParams:charset=GBK&method=alipay.trade.refund&sign=BzZYWBPB/ekAsrHYTcG6fjmpspgs2isnIcVGX9yBOLwPIahNNnWSsNUZvtfwCnI/Y3JvKriG4W84/FUWnbwPWndWG+n/uONlbZ9rmpGi4hYknqZxvfR73DFviCCS8O7GalJi+HfnPS8aJFB2iPWiObDTVs6MnUxw+144rfr/D4n5YlG51YAZ/FoFKXnWdOkrmOjQqsxFrvx1yvivbkw26PHmsiPKAtOvewDPKChcnwRtxpm8hnXBvgpk/Aixonj47gNDT27hgxBvtw2nuw5uSZnnh4+v/nHLFsURnPD1EVK5G0U7DWKR+mfRZ9xbTxwM7p7MKOMrJxKWzJqd0x+YIA==&version=1.0&app_id=2016092800616244&sign_type=RSA2&timestamp=2019-03-13 14:18:41^_^ProtocalOptParams:alipay_sdk=alipay-sdk-java-3.3.2&format=json^_^ApplicationParams:biz_content={"out_trade_no":"031314093011192","trade_no":"2019031322001403160500600870","refund_amount":10  }^_^Body:{"alipay_trade_refund_response":{"code":"40002","msg":"Invalid Arguments","sub_code":"isv.invalid-app-id","sub_msg":"无效的AppID参数"}}^_^822ms,607ms,41ms
+  [ERROR] [2019-03-13 14:21:16][sdk.biz.err]2019-03-13 14:21:16^_^{"alipay_trade_refund_response":{"code":"40004","msg":"Business Failed","sub_code":"ACQ.REFUND_AMT_NOT_EQUAL_TOTAL","sub_msg":"撤销或退款金额与订单金额不一致","out_trade_no":"031314093011192","refund_fee":"0.00","send_back_fee":"0.00"},"sign":"mXUUqAmzOBrfxJN6TtlwZwgaOdQblv6w66zMm0DqFdeGZKNwwl7S5SbOt+GQmH+ECnBK/wN4BROTtt480cY5i6OKgDpOCy5WAj3E0xKYwH+cFT3VktVanK6LiL9n9G9unmDNnET3do2OiWwS9byGRfTEx/PiRhGTlVCU2dv7DTohzzyS+2YvWr/pmImjqZSN44sBDpdEc5KRc9zs8Bwzwms3Hmf/SA6kG40aGrxKj0Pp9h8dcpK6YDc2UXB5neLURbcJjRZOOu/XqQXsyDyaIl5ACJpCXuhB/buZ6f2uxaYmE5tUjjRkrwitqPang7fqzHsPyDT07h7Ewf8FRpNCvA=="}^_^663ms,808ms,nullms
+  [ERROR] [2019-03-13 14:22:00][sdk.biz.err]2019-03-13 14:22:00^_^{"alipay_trade_refund_response":{"code":"10000","msg":"Success","buyer_logon_id":"puc***@sandbox.com","buyer_user_id":"2088102177603162","fund_change":"Y","gmt_refund_pay":"2019-03-13 14:21:53","out_trade_no":"031314093011192","refund_fee":"222.00","send_back_fee":"0.00","trade_no":"2019031322001403160500600870"},"sign":"IJwXV+MkyZNR2zvhmidU+xlZ2kxkwDJQrU4muiemNft8u8/LYirfViZmJNgf5QoGt5jBeBMAx3v8geZt/ByeSow9gof+VjzaofUdUmqYaIaUR3BxJHBvPKvWoiMNOSMWVtqsg++XcmzvaSZLT9vjWEDU1Ojv8S4CnR5utDtdwhCEsa54a5wRgjfsOfegJO8Um8w7BVISvlsj3Kqi2s0J1nv4fHW6c7ksomCCf8M5wViOa+zLK5WVAJQCs9gwfyrOopOJURDhrH4Sn1iObPoBlH+nmkIypo5S1W2j4NSYUJNYPA7y5Asp+t6lP2XW6gog5ymnwK9M4GYVgstyU6ub2Q=="}^_^680ms,3252ms,nullms
+  [ERROR] [2019-03-13 14:26:12][sdk.biz.err]2019-03-13 14:26:12^_^{"alipay_trade_refund_response":{"code":"10000","msg":"Success","buyer_logon_id":"puc***@sandbox.com","buyer_user_id":"2088102177603162","fund_change":"Y","gmt_refund_pay":"2019-03-13 14:26:06","out_trade_no":"031314234293030","refund_fee":"222.00","send_back_fee":"0.00","trade_no":"2019031322001403160500601052"},"sign":"QFd4Vr1n+mZLBN5jtryc0qPhXxtXWL+/IhPhIHZvjEccWx6rCVt8vPewpYOTBq7qNuq8bHWo2t6okByIbMbXnIomep3mIU8hMyB0xICC4WjSRiv3s7L0Wqk9cXoDn3oIS0IIMXWYY2cY8mvauxq+XiKqp1xe2K/ROKSqXQW2MOvRKSg8fGg7tjM0o4Bv0k6eFihL8qeC1JwqYQQRkzAxSpVjEnZSnGNFDC1543z01R89vln7Wp8kXRck2GpuOwR2HvRhNusrRi7TxtZmaNaOJg+Ss5aPmT1/KIotLtbUujJGW4ZxS8GfKtIW5T0BdSwTzhaOKr1Y+e/fFfI4Pm1SuA=="}^_^690ms,2737ms,nullms
+  [INFO] [2019-03-13 14:31:20][sdk.biz.err]Summary^_^10000^_^null^_^ProtocalMustParams:charset=GBK&method=alipay.trade.refund&sign=Y4xW2h687fzayQV70NtRdNtO2wugOg12QgvyUIluAtHmV1sGUlRtBTpRIuehEFSlZxRQiTXc08MRrkEIzpqZoSCm4bD9cD1bIeDfROrNQ2AFXG7IX3EHQwJoQ39jX5MHJa/eSdqphgO69bD1BhQ2CoOzhSKbt5lWGk97H+haxtQpXaHhxQTymEeDyW5+2NoVDW6XZsHPX+1o0x/Rit2Jjocx4/P9LQidcMeWCTw2ObppLwsimBF9+61PQRBAy/YSlwPj2n+9/nafXsvmnaLaID+lLxmpY7MQVug+nXbh36VvJcO+a3XWZLbPg9I2nwfWpAJndX6lFv97B20j7P/7Jw==&version=1.0&app_id=2016092800616244&sign_type=RSA2&timestamp=2019-03-13 14:31:19^_^ProtocalOptParams:alipay_sdk=alipay-sdk-java-3.3.2&format=json^_^ApplicationParams:biz_content={"out_trade_no":"031314234293030","trade_no":"2019031322001403160500601052","refund_amount":222.00  }^_^673ms,1002ms,43ms
+  [INFO] [2019-03-13 14:33:01][sdk.biz.err]Summary^_^10000^_^null^_^ProtocalMustParams:charset=GBK&method=alipay.trade.refund&sign=DgNKLVO/ojfn0PkP4b6uI2pAoKZFiIji/yZ62wL0EEi76m1SVYw3rRIsWOz9kNokavhls2YQF5XMznyfbwV/4QAq2PcVZ4h/1K8LQl4+FmX/GDkVetwUnO0hGLyIq3Z3jQ7iyhWJT0uvghZGeotZTiuvRNAoQiehcNScH8S05xEkFsa0TuLx8XEi0ZqDouxHEhC7AKYXIWQKHRiYHU2jy0Z5Y4LmgPHdAuQJjn8QA98m/N4WQJX7Gfl7aLlatos07YuVTs6peTTGwfEsZd7npLmyaTOYbThG/JnpvqdBg1iReaX6bSsrLdfiKB2YYpmAUjQFPdqmcbz2vx+D1RJfvQ==&version=1.0&app_id=2016092800616244&sign_type=RSA2&timestamp=2019-03-13 14:32:58^_^ProtocalOptParams:alipay_sdk=alipay-sdk-java-3.3.2&format=json^_^ApplicationParams:biz_content={"out_trade_no":"031314315844158","trade_no":"2019031322001403160500601053","refund_amount":222.00  }^_^670ms,2500ms,38ms
+  [INFO] [2019-03-13 15:56:29][sdk.biz.err]Summary^_^10000^_^null^_^ProtocalMustParams:charset=GBK&method=alipay.trade.refund&sign=dDFJ4cad4IwM0UsWBwRd1+9iH8s4ZnzuLp+kc6ulFQpdfhg3/6vo4NQJ6zVMPuJtuJnui3MGvWKRfjHlbHabSJajku1GS30yUQe1HdbZ/8tIJjHXqSlDvaHeaZvA/XotBwkqZZuSWwIsrQvDlEkiK+8ND3e88pe2136uzqGEd4Q1vxDciXRjWU4HP9cdyV4fM6uKWOknJ2uV/rh8xFMRHmWtKhHdVdvR2dkd9sXCeG9HTKqoKk+IQ9m3tacBAy9gQsvHEzoED8ofpjpZ9FNE5IMuN8i14xPfHAn95nlBNasn3eBfBNGmdfj9N5b4159XXAqp7DFE3xnJvmEzymhb6Q==&version=1.0&app_id=2016092800616244&sign_type=RSA2&timestamp=2019-03-13 15:56:25^_^ProtocalOptParams:alipay_sdk=alipay-sdk-java-3.3.2&format=json^_^ApplicationParams:biz_content={"out_trade_no":"031315081419203","trade_no":"2019031322001403160500600685","refund_amount":222.00  }^_^805ms,2996ms,45ms
+  [ERROR] [2019-03-13 16:16:22][sdk.biz.err]ErrorScene^_^40004^_^ACQ.TRADE_NOT_EXIST^_^null^_^Windows 7^_^2019-03-13 16:16:22^_^ProtocalMustParams:charset=GBK&method=alipay.trade.refund&sign=VdsCVwKxThA22GUOIrFi+P3dj5dyhHaixr+yeZMRc2u4pBRDfyR/BOhQeB5buiVrVg+ekVU+nXqFmpiMJe0WZ6e9W1G/tR/hsC0XfYvEWJ6jC6uFd+w+af1di3OQwOUskW7ZKApki+CBEFM9bmLDXzZ6JZdoncou2tx9CkNklnJm7etC26BPHyhoKP4gcuY8RyLxg+dLtzW3sq4KTpsBSruBYx9J3Iwh+nkMiXheKAbNP3oote1v21YcUIl5mWs/T/P/bm2Bo5cIl9FEp3K7AhbeplYxeXnS7rCC1mxamchlDsx8UfORrQ4Bjogj3JqfDeVT7HbdehR16kD0JWdmIg==&version=1.0&app_id=2016092800616244&sign_type=RSA2&timestamp=2019-03-13 16:16:21^_^ProtocalOptParams:alipay_sdk=alipay-sdk-java-3.3.2&format=json^_^ApplicationParams:biz_content={"out_trade_no":"031316132078841","trade_no":" 2019031322001403160500600876 ","refund_amount":222.0  }^_^Body:{"alipay_trade_refund_response":{"code":"40004","msg":"Business Failed","sub_code":"ACQ.TRADE_NOT_EXIST","sub_msg":"交易不存在","refund_fee":"0.00","send_back_fee":"0.00"},"sign":"1ji5e0l0mqpHzv/WDbDcXC7CAXHdXbfvvfN3opP2FF//JEYVovYWcCQYiXJ4BWMWbffOunXc+AmOSslHgi5i6EajWDhEd5HGjFIOKrksSs5WFFK7X4vSY41n5gN2v0EIiRU2CW3QA9OyHIJLK0VyqcgPE0mDC7B66ByOThFphI/umcKmVWMrW5GtC5wZ8mrplS35z58tLIboxpTZfpSgyc5mEBRqYEPNAlL+unpdF51zMD+B6lsyXaHqJvhyqV7nh1eQ+JjgiBiK4ghenKRXtr05XX0th/ZEV5kMAIIBQawr9aGJP960BTAp1KjFKLOPxGq64G+JmhZ2Ql/czx/S6w=="}^_^670ms,381ms,31ms
+  [ERROR] [2019-03-13 16:17:22][sdk.biz.err]ErrorScene^_^40004^_^ACQ.INVALID_PARAMETER^_^null^_^Windows 7^_^2019-03-13 16:17:22^_^ProtocalMustParams:charset=GBK&method=alipay.trade.refund&sign=gCv3eZBJvjj9CedLOe5XJp+3o2O8wcbh667jezq+H4E1mn9M77QfFRLp7ePWMR4xpw1FYJvEFbPPIBChZS7954ijvgjP6mb0JIGrZOzxH+G0DcQx6tSKW3UYGBOeBlv9KscpTZGr804BI+KdBQavG0ajdfcbZwNUwmFccpDWH6qW6PkA5LElubiKFFUk0UmTk1xcB34P6aGPdwiRNgr9adkD+Ew5rZdS0rymCvI9e7mNv/dS3dqvCi6jRrsAr4/gc1jWjPZOaqGzEDeqV38fvNZnN2y8+/73q1ueYzxmWn5YiS2zeOM5I43sd5eG/deqieHJLuRX2rAmwCmQe70ZKw==&version=1.0&app_id=2016092800616244&sign_type=RSA2&timestamp=2019-03-13 16:17:21^_^ProtocalOptParams:alipay_sdk=alipay-sdk-java-3.3.2&format=json^_^ApplicationParams:biz_content={"out_trade_no":031316132078841,"trade_no":2019031322001403160500600876,"refund_amount":222.0  }^_^Body:{"alipay_trade_refund_response":{"code":"40004","msg":"Business Failed","sub_code":"ACQ.INVALID_PARAMETER","sub_msg":"参数无效"},"sign":"PKmAlNElOsCSYR8d6tGdDPbNzOi58NKXxo6lotnunRIB7pXBLJj3365vDTLFgAOoqpU7E8gFgDMMLd6ZamvlZiwHCtd923DFa5gGmXdbmZNauYO5Fi6k5nn+nTt3T3rAlAnclhk3G7jXCK8lmx6tV9vzsOQEPsy2Rw8zUKmEqDVtkHy208/RX51PnfszFAlGczgJwNeSrYPScmt1+0J9ZHC0YkmTYXlKo063FRAbC84HtG6T64D/37NM1B7HAEqsT1nb8yP3QDq9MBHwIwUDgIjR8fjfETHksXbLN9mCiuBpBdE4FkW3fcx5uEdfo260VYOop5c9xQDB8ESOLcI9fg=="}^_^679ms,441ms,30ms
+  [INFO] [2019-03-13 16:19:13][sdk.biz.err]Summary^_^10000^_^null^_^ProtocalMustParams:charset=GBK&method=alipay.trade.refund&sign=FQCLjiXXJy3/+TVhBdVuutmVW7gXt+hmlFmb/cmOio/2jHMHfBxjLZytdZo5SkQOdlXsFDZAWvEdO9n8S8uxyM/i4mai6vFSTMdSNjchssHnNmuM3dt1VQhKGKDAvCNOjLfYNsrrlRQpumrqzxZo2r1ABuB6Jq0Ih4zpi2U63r749VYghgQcTvjnbBJTWPNsln9azSVf39wciobwsPxkxrY1KTpmcUIr1mQ1T8oCLQ1pAZmH8VNke/Lh+pnT15uavZm8z9oBW1GQWs7rQp/5DxJLFEk/6vn6TeOknHA6X8eWXE2u7yr7XRTZi12WBlLCn70O6TmyB7uBSnjwvz8S9Q==&version=1.0&app_id=2016092800616244&sign_type=RSA2&timestamp=2019-03-13 16:19:10^_^ProtocalOptParams:alipay_sdk=alipay-sdk-java-3.3.2&format=json^_^ApplicationParams:biz_content={"out_trade_no":"031316132078841","trade_no":"2019031322001403160500600876","refund_amount":222}^_^580ms,2705ms,47ms
+  
