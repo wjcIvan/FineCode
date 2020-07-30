@@ -15,7 +15,7 @@
         <mybatis.version>3.2.6</mybatis.version>  
         <!-- log4j日志文件管理包版本 -->  
         <slf4j.version>1.7.7</slf4j.version>  
-        <log4j.version>1.2.17</log4j.version>  
+        <log4j.version>1.2.28</log4j.version>  
     </properties> 
 	
 	<dependencies>
@@ -157,7 +157,7 @@
         <dependency>  
             <groupId>org.codehaus.jackson</groupId>  
             <artifactId>jackson-mapper-asl</artifactId>  
-            <version>1.9.13</version>  
+            <version>1.9.14</version>  
         </dependency>  
         <!-- 上传组件包 -->  
         <dependency>  
