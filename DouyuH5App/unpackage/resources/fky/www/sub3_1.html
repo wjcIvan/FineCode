@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>直播间页面</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+		<style type="text/css">
+			#wholeContent {
+				height: 1000px;
+				width: 100%;
+				padding: 0;
+				margin: 0;
+			}
+
+			header {
+				position: absolute;
+				top: 25px;
+			}
+
+			header a {
+				border-radius: 25px;
+			}
+
+			#indexCate {
+				background-color: #0062CC;
+				position: absolute;
+				top: 312px;
+			}
+
+			#indexCate a {}
+
+			* {
+				padding: 0;
+				margin: 0;
+			}
+
+			#content {
+				width: 100%;
+				height: 320px;
+				background-image: url(image/zhibo11.png);
+				background-size: contain;
+				position: relative;
+			}
+			
+		</style>
+	</head>
+
+	<body>
+		<div id="wholeContent">
+			<div id="bullet">
+				
+			</div>
+			<div id="main">
+				<header class="mui-bar mui-bar-nav">
+					<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				</header>
+				<div class="mui-content content" id="content">
+
+				</div>
+			</div>
+
+			<div class="mui-content">
+				<div id="indexCate" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+					<div class="mui-scroll">
+						<a class="mui-control-item" id="3_1_1">聊天</a>
+						<a class="mui-control-item" id="3_1_2">主播</a>
+						<a class="mui-control-item" id="3_1_3">排行榜</a>
+						<a class="mui-control-item" id="3_1_4">贵族</a>
+						<a class="mui-control-item" id="3_1_5">鱼吧</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/mui.js"></script>
+		<script src="js/h.js"></script>
+		<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.plusReady(function() {
+				mui(".mui-scroll").on("tap", ".mui-control-item", function() {
+					var index = this.getAttribute("id");
+					var cur = plus.webview.getWebviewById("content3Html");
+					//判断是否是此页面
+					if (cur.getURL() != "sub" + index + ".html") {
+						cur.loadURL("sub" + index + ".html")
+					}
+				});
+			});
+			mui.init({
+				subpages: [{
+					url: "sub3_1_1.html",
+					id: "content3Html",
+					styles: {
+						top: "350px",
+						bottom: "0px"
+					}
+				}]
+			});
+		</script>
+	</body>
+</html>

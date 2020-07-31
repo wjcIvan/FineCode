@@ -1,0 +1,226 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>LOL页面</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/swiper.min.css" />
+		<style type="text/css">
+			body {
+				height: 100%;
+				width: 100%;
+				position: relative;
+				padding: 0;
+				margin: 0;
+				background-color: aliceblue;
+			}
+
+			header {
+				width: 100%;
+				height: 200px;
+				padding: 20px;
+			}
+
+			#activityImg>img {
+				width: 100%;
+				height: 160px;
+				display: block;
+				border-radius: 5px;
+			}
+
+			.mui-bar-tab {
+				position: absolute;
+				background-color: aliceblue;
+				top: 200px;
+				width: 100%;
+				height: 50px;
+			}
+
+			.mui-bar-tab a {
+				font-size: 24px;
+			}
+
+			.mui-content {
+				position: absolute;
+				top: 250px;
+				background-color: aliceblue;
+				width: 100%;
+				height: 20%;
+			}
+
+			.mui-card {
+				float: left;
+				width: 44%;
+				margin: 3%;
+
+			}
+
+			.mui-card img {
+				height: 120px;
+				width: 100%;
+				display: block;
+				background-size: cover;
+			}
+
+			.mui-card #anchor {
+				position: absolute;
+				left: 2%;
+				top: 80%;
+				color: white;
+				font-size: 16px;
+			}
+
+			.mui-card-footer {
+				height: 10px;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+
+			.mui-control-item {
+				border-radius: 8px;
+				background-color: lightgray;
+				/* display: block; */
+			}
+
+			#indexCate a {
+				/* background-color: skyblue; */
+			}
+
+			.mui-bar {
+				top: 200px;
+				box-shadow: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header>
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<div id="activityImg">
+							<img src="image/lol1.jpg">
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div id="activityImg">
+							<img src="image/lol2.jpg">
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div id="activityImg">
+							<img src="image/lol3.jpg">
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div id="activityImg">
+							<img src="image/lol4.jpg">
+						</div>
+					</div>
+				</div>
+				<div class="swiper-pagination"></div>
+			</div>
+		</header>
+		<nav class="mui-bar mui-bar-tab">
+			<a class="mui-tab-item mui-active" href="#live">
+				<span class="mui-tab-label">直播</span>
+			</a>
+			<a class="mui-tab-item" href="#video">
+				<span class="mui-tab-label">视频</span>
+			</a>
+			<a class="mui-tab-item" href="#foreshow">
+				<span class="mui-tab-label">赛事预告</span>
+			</a>
+		</nav>
+		<div class="mui-content">
+			<div class="mui-control-content mui-active" id="live">
+				<div id="indexCate" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+					<div class="mui-scroll">
+						<a class="mui-control-item mui-active" id="3_1_1" onclick="show()">全部</a>
+						<a class="mui-control-item" id="3_1_2" onclick="hidden1()">妹纸主播</a>
+						<a class="mui-control-item" id="3_1_3" onclick="hidden1()">大神主播</a>
+						<a class="mui-control-item" id="3_1_4" onclick="hidden1()">王者之路</a>
+						<a class="mui-control-item" id="3_1_5" onclick="hidden1()">赛事直播</a>
+					</div>
+				</div>
+				<div id="liveShow">
+					<div class="mui-card" v-for="item in cate">
+						<div class="mui-card-content" onclick="liveRoom()">
+							<img v-bind:src="item.room_src">
+							<div id="anchor">{{item.nickname}}</div>
+						</div>
+						<div class="mui-card-footer">{{item.room_name}}</div>
+					</div>
+				</div>
+			</div>
+			<div class="mui-control-content" id="video">
+				222222
+				<video width="100%" height="200">
+					<source src="" type="video/mp4">
+					</source>
+					<source src="" type="video/ogg">
+					</source>
+					<source src="" type="video/webm">
+					</source>
+					<object width="" height="" type="application/x-shockwave-flash" data="">
+						<param name="movie" value="myvideo.swf" />
+						<param name="flashvars" value="autostart=true&amp;file=myvideo.swf" />
+					</object>
+					<a href="">下载视频</a>
+				</video>
+			</div>
+			<div class="mui-control-content" id="foreshow">333</div>
+		</div>
+
+		<script src="js/mui.js"></script>
+		<script src="js/swiper.min.js"></script>
+		<script src="js/vue.min.js"></script>
+		<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init();
+			var demo = new Vue({
+				el: "#liveShow",
+				data: {
+					cate: [{}]
+				}
+			});
+
+			function hidden1() {
+				var liveshow = document.getElementById("liveShow");
+				//console.log("hidden");
+				liveshow.style.display = "none";
+			}
+
+			function show() {
+				var liveshow = document.getElementById("liveShow");
+				//console.log("show");
+				liveshow.style.display = "block";
+			}
+
+			mui.getJSON(
+				'http://open.douyucdn.cn/api/RoomApi/live/1',
+				function(res) {
+					demo.cate = res.data;
+				}
+			);
+
+			function liveRoom() {
+				mui.openWindow({
+					url: "sub3_1.html",
+					id: "sub3_1.html"
+				})
+			}
+			new Swiper('.swiper-container', {
+				loop: true,
+				pagination: '.swiper-pagination',
+				paginationClickable: true,
+				autoplayDisableOnInteraction: false,
+				autoplay: 3000
+			});
+		</script>
+	</body>
+
+</html>

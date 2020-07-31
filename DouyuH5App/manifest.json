@@ -152,7 +152,8 @@
             "plugins" : {
                 "speech" : {
                     "ifly" : {}
-                }
+                },
+                "ad" : {}
             }
         }
     }
