@@ -62,7 +62,7 @@ def tweet_driver(driver):
 
     last_time = "今天"
     # 只获取今天和昨天 两天的动弹 可以改成你想要的比如【今天 昨天 前天 08/01】
-    while "08/02" not in last_time:
+    while "08/09" not in last_time:
         # 这里可以不滑/sleep 但是不知道为什么偶尔会出错 所以还是滑吧 我也不想的
         driver.execute_script('window.scrollTo(0,document.body.scrollHeight)')
         time.sleep(3)
@@ -70,7 +70,10 @@ def tweet_driver(driver):
         last_time = driver.find_element_by_xpath("//*[@id='tweetList']/div[1]/div[last()]//*[@class='date']").text
         print last_time
         # 点击 查看更多动弹
-        driver.find_element_by_xpath("//a[@class='ui fluid button load-more-button']").click()
+        try:
+            driver.find_element_by_xpath("//a[@class='ui fluid button load-more-button']").click()
+        except:
+            print "有点小问题 再划一下"
         # 给页面加载的时间 网速好的话给少点 自信的话可以不给
         time.sleep(3)
 
@@ -167,13 +170,12 @@ def main():
         for i in user_list_new:
             if s == 100:
                 break
+            s += 1
             top_user_score_dict[i[0]] = i[1] * 15
             if i[0] in all_comment_user_dict:
                 top_user_score_dict[i[0]] += all_comment_user_dict[i[0]] * 9
             if i[0] in all_like_user_dict:
                 top_user_score_dict[i[0]] += all_like_user_dict[i[0]] * 6
-
-            s += 1
 
         r = 0
         for i in all_comment_user_list_new:
@@ -190,6 +192,28 @@ def main():
 
         top_user_score_list_new = sorted(top_user_score_dict.iteritems(), key=lambda x: x[1], reverse=True)
         write_list('userNameList.txt', top_user_score_list_new)
+        write_name('userNameList2.txt', top_user_score_list_new)
+
+        # 官方人员排名
+        # 先获取官方人员list
+        # python2奇葩的编码问题 搞吐了 曲线救国 后续优化一下
+        osc_official_name_dict = get_osc_official_name()
+        osc_official_name_list = sorted(osc_official_name_dict.iteritems(), key=lambda x: x[1], reverse=True)
+        top_osc_user_score_dict = {}
+        for i in osc_official_name_list:
+            # 记得先初始化
+            top_osc_user_score_dict[i[0]] = 0
+            if i[0] in user_dict:
+                top_osc_user_score_dict[i[0]] += user_dict[i[0]] * 15
+            if i[0] in all_comment_user_dict:
+                top_osc_user_score_dict[i[0]] += all_comment_user_dict[i[0]] * 9
+            if i[0] in all_like_user_dict:
+                top_osc_user_score_dict[i[0]] += all_like_user_dict[i[0]] * 6
+
+        top_osc_user_score_list_new = sorted(top_osc_user_score_dict.iteritems(), key=lambda x: x[1], reverse=True)
+        write_list('oscUserNameList.txt', top_osc_user_score_list_new)
+        write_name('oscUserNameList2.txt', top_osc_user_score_list_new)
+
     except Exception as e:
         print "出现了异常 " + str(e) + ",跳过"
 
@@ -300,7 +324,17 @@ def get_cookies():
     driver.close()
 
 
-# 输出格式 key = value 
+# 构造官方人员dict
+def get_osc_official_name():
+    osc_official_name_dict = {}
+    r = open("oscOfficialName.txt", "r")
+    for line in r:
+        line = line.replace("\n", "").encode('gbk', 'ignore').decode("gbk", "ignore")
+        osc_official_name_dict[line] = 0
+    return osc_official_name_dict
+
+
+# 输出格式 key = value
 def write_list(file_name, name_list):
     with open(file_name, 'w') as f:
         for i in name_list:
@@ -330,7 +364,9 @@ if __name__ == "__main__":
         # 此处也能放在后面 时刻更新cookie文件 避免过期 但没必要
         # get_cookies()
         main()
-
+        # print get_osc_official_name()
+        # for i in get_osc_official_name():
+        #     print i
         # linux需使用以下注释代码
         # display.stop()
     except Exception as e:
