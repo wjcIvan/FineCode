@@ -62,7 +62,7 @@ def tweet_driver(driver):
 
     last_time = "今天"
     # 只获取今天和昨天 两天的动弹 可以改成你想要的比如【今天 昨天 前天 08/01】
-    while "08/09" not in last_time:
+    while "08/16" not in last_time:
         # 这里可以不滑/sleep 但是不知道为什么偶尔会出错 所以还是滑吧 我也不想的
         driver.execute_script('window.scrollTo(0,document.body.scrollHeight)')
         time.sleep(3)
@@ -113,10 +113,14 @@ def comment_driver(driver):
     if_end = driver.find_elements_by_xpath("//div[@class='list-container-last-tips']")
     while len(if_end) != 1:
         # 你都滑完三次了 如果还没有出现 【没有更多内容】的标志 那就说明需要点击【更多评论】
-        driver.find_element_by_xpath("//a[@class='ui fluid button load-more-button']").click()
+        try:
+            driver.find_element_by_xpath("//a[@class='ui fluid button load-more-button']").click()
+        except:
+            print "有点小问题 再划一下"
+            continue
+        time.sleep(3)
         # 这里可以不滑/sleep 但是不知道为什么偶尔会出错 所以还是滑吧 我也不想的
         driver.execute_script('window.scrollTo(0,document.body.scrollHeight)')
-        time.sleep(3)
         # 滑一次取一次
         if_end = driver.find_elements_by_xpath("//div[@class='list-container-last-tips']")
 
@@ -150,7 +154,7 @@ def main():
             try:
                 comment_user_list, like_user_set = get_comment_user_name_top_shui(driver)
             except Exception as e:
-                print "出现了异常 " + str(e) + ",跳过"
+                print "出现了异常 " + str(e) + ",跳过1"
                 continue
             get_like_user_dict_all(like_user_set)
             if comment_user_list is None:
@@ -215,7 +219,7 @@ def main():
         write_name('oscUserNameList2.txt', top_osc_user_score_list_new)
 
     except Exception as e:
-        print "出现了异常 " + str(e) + ",跳过"
+        print "出现了异常 " + str(e) + ",跳过2"
 
     driver.quit()
 
