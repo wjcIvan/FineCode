@@ -78,12 +78,11 @@ ITEM_PIPELINES = {
 }
 
 # MySQL 数据库参数配置
-# MYSQL_HOST = '192.168.202.4'
 MYSQL_HOST = '127.0.0.1'
 MYSQL_PORT = 3306
 MYSQL_USER = 'root'
-MYSQL_PASSWORD = '86itsec.'
-MYSQL_DBNAME = 'scap_test'
+MYSQL_PASSWORD = 'root'
+MYSQL_DBNAME = 'test'
 
 RETRY_ENABLED = True  # 打开重试开关
 RETRY_TIMES = 30  # 重试次数
