@@ -2,33 +2,33 @@
 ### DouyuH5App
 #### 说明  
 仿斗鱼H5APP  
-编辑器：HBuilder  
-技术：vue+h5  
+IDE：HBuilder  
+技术：vue + h5  
 ### Jieshu
 无人管理的图书馆  
-编辑器：AS + eclipse  
-技术：android + java  
+IDE：Android Studio + eclipse  
+技术：Android + java  
 ### MavenScrapy  
 maven爬虫  
-编辑器：pycharm  
-技术：py3+ scrapy  
+IDE：pycharm  
+技术：py3 + scrapy  
 ### MySimpleMP3Player  
 音乐播放器  
-编辑器：AS  
+IDE：Android Studio  
 技术：android  
 ### OSCTweetsSpider
 开源中国动弹爬虫  
-编辑器：pycharm  
+IDE：pycharm  
 技术：py2+selenium  
 ### OSChina-app
 仿开源中国APP  
-编辑器：AS  
+IDE：Android Studio  
 技术：android  
 ### ReadfreeSpider
 readfree 爬虫  
-编辑器：pycharm  
-技术：py2+mongo  
+IDE：pycharm  
+技术：py2 + mongo  
 ### cnvdSpider
 cnvd爬虫  
-编辑器：pycharm  
+IDE：pycharm  
 技术：py2  
