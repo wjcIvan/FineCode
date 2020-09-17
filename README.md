@@ -29,6 +29,10 @@ readfree 爬虫
 IDE：pycharm  
 技术：py2 + mongo  
 ### cnvdSpider
+SSH  
+IDE：eclipse  
+技术：java + sqlserver  
+### cnvdSpider
 cnvd爬虫  
 IDE：pycharm  
 技术：py2  
