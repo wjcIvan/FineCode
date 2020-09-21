@@ -19,7 +19,7 @@ IDE：Android Studio
 ### OSCTweetsSpider
 开源中国动弹爬虫  
 IDE：pycharm  
-技术：py2+selenium  
+技术：py2 + selenium  
 ### OSChina-app
 仿开源中国APP  
 IDE：Android Studio  
@@ -28,8 +28,12 @@ IDE：Android Studio
 readfree 爬虫  
 IDE：pycharm  
 技术：py2 + mongo  
-### cnvdSpider
-SSH  
+### RecordSpider
+备案爬虫  
+IDE：pycharm  
+技术：py3 + selenium  
+### SSH
+个人博客  
 IDE：eclipse  
 技术：java + sqlserver  
 ### cnvdSpider
