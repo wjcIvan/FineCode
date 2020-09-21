@@ -33,7 +33,7 @@ IDE：pycharm
 IDE：pycharm  
 技术：py3 + selenium  
 ### SSH
-个人博客  
+员工管理系统  
 IDE：eclipse  
 技术：java + sqlserver  
 ### cnvdSpider
