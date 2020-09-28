@@ -11,7 +11,7 @@ IDE:myeclipse
 介绍:h5课程设计 简单模仿斗鱼做了静态界面 部分几个用了斗鱼的api 动态加载直播间信息 纯属手撸 一个下午一个界面的那种   
 IDE:HBuilder  
 技术:vue + h5  
-### Jieshu
+### UnmannedManagementLibrary  
 无人管理的图书馆  
 介绍:憨憨毕设 只得了B  
 IDE:Android Studio + eclipse  
