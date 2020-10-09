@@ -11,11 +11,6 @@ IDE:myeclipse
 介绍:h5课程设计 简单模仿斗鱼做了静态界面 部分几个用了斗鱼的api 动态加载直播间信息 纯属手撸 一个下午一个界面的那种   
 IDE:HBuilder  
 技术:vue + h5  
-### UnmannedManagementLibrary  
-无人管理的图书馆  
-介绍:憨憨毕设 只得了B  
-IDE:Android Studio + eclipse  
-技术:Android + java  
 ### MavenScrapy  
 maven爬虫  
 介绍:fork的 然后自己做了适配 爬取中央仓库的所有jar信息  
@@ -51,6 +46,16 @@ IDE:pycharm
 介绍:慕课网上的 fork的 瞎写的  
 IDE:eclipse  
 技术:java + sqlserver  
+### SoccerApp  
+足球队管理App  
+介绍:课堂练手作业  
+IDE:Android Studio  
+技术:Android    
+### UnmannedManagementLibrary  
+无人管理的图书馆  
+介绍:憨憨毕设 只得了B  
+IDE:Android Studio + eclipse  
+技术:Android + java  
 ### cnvdSpider
 cnvd爬虫  
 介绍:这个网站十分恶心 各种反爬 没辙 告辞  
