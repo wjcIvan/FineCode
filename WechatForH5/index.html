@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>Wechat</title>    
+    <link href="css/mui.min.css" rel="stylesheet"/>
+	
+	<style type="text/css">
+		.chat-date{
+			position: absolute;
+			font-size: 10px;
+			right: 10px;
+			top: 10px;
+		}
+		#someCard{
+			line-height:42px;
+		}
+		#specialLi{
+			height:30px;
+			background-color:#ddd;
+		}
+		#myLi{
+			height:80px;
+			line-height:30px;
+		}
+		#erweima{
+			background-image:url(images/erweima.svg);
+			width:32px;
+			height:32px;
+			line-height:80px;
+			top:20px;
+		}
+        all{
+            padding: 0;
+            margin: 0;
+        }
+	</style>
+    
+</head>
+<body>
+	<!-- http://dev.dcloud.net.cn/mui/ui/ -->
+	<header class="mui-bar mui-bar-nav">
+		<a class="mui-action-back mui-icon mui-icon mui-icon-plusempty mui-pull-right" href="#popover"></a>
+		<h1 class="mui-title">微信</h1>
+	</header>
+	
+	<nav class="mui-bar mui-bar-tab">
+		<a class="mui-tab-item mui-active" href="#home">
+			<span class="mui-icon mui-icon-home"></span>
+			<span class="mui-tab-label">首页</span>
+		</a>
+		<a class="mui-tab-item" href="#tel">
+			<span class="mui-icon mui-icon-phone"></span>
+			<span class="mui-tab-label">通讯录</span>
+		</a>
+		<a class="mui-tab-item" href="#discovery">
+			<span class="mui-icon mui-icon-email"></span>
+			<span class="mui-tab-label">发现</span>
+		</a>
+		<a class="mui-tab-item" href="#myself">
+			<span class="mui-icon mui-icon-gear"></span>
+			<span class="mui-tab-label">我</span>
+		</a>
+	</nav>
+	<div id="popover" class="mui-popover">
+		<ul class="mui-table-view">
+			<li class="mui-table-view-cell"><a href="#">发起群聊</a></li>
+			<li class="mui-table-view-cell"><a href="#">添加朋友</a></li>
+			<li class="mui-table-view-cell"><a href="#">扫一扫</a></li>
+			<li class="mui-table-view-cell"><a href="#">收付款</a></li>
+			<li class="mui-table-view-cell"><a href="#">帮助与反馈</a></li>
+		</ul>
+	</div>
+	<div class="mui-content">
+		
+		<!-- 首页 -->
+		<div class="mui-control-content mui-active" id="home">
+		<ul class="mui-table-view">
+			<li class="mui-table-view-cell mui-media">
+				<a href="javascript:;">
+					<img class="mui-media-object mui-pull-left" src="images/touxiang.svg">
+					<div class="chat-date">11:11</div>
+					<div class="mui-media-body">
+						wjcIvan
+						<p class="mui-ellipsis">[图片]</p>
+					</div>
+				</a>
+			</li>			
+			
+		</ul>
+		</div>
+		
+		<!-- 电话 -->
+		<div class="mui-control-content" id="tel">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell mui-media">
+					<a href="javascript:;">
+						<img class="mui-media-object mui-pull-left" src="images/xindepengyou.svg">
+						<div class="mui-media-body" id="someCard">							
+							<p class="mui-ellipsis">新的朋友</p>
+						</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media">
+					<a href="javascript:;">
+						<img class="mui-media-object mui-pull-left" src="images/qunliao.svg">
+						<div class="mui-media-body" id="someCard">							
+							<p class="mui-ellipsis">群聊</p>
+						</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media">
+					<a href="javascript:;">
+						<img class="mui-media-object mui-pull-left" src="images/biaoqian.svg">
+						<div class="mui-media-body" id="someCard">							
+							<p class="mui-ellipsis">标签</p>
+						</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media">
+					<a href="javascript:;">
+						<img class="mui-media-object mui-pull-left" src="images/gongzhonghao.svg">
+						<div class="mui-media-body" id="someCard">							
+							<p class="mui-ellipsis">公众号</p>
+						</div>
+					</a>
+				</li>
+				<li id="specialLi"></li>
+				<li class="mui-table-view-cell mui-media">
+					<a href="javascript:;">
+						<img class="mui-media-object mui-pull-left" src="images/touxiang.svg">
+						<div class="mui-media-body" id="someCard">							
+							<p class="mui-ellipsis">Java</p>
+						</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media">
+					<a href="javascript:;">
+						<img class="mui-media-object mui-pull-left" src="images/touxiang.svg">
+						<div class="mui-media-body" id="someCard">							
+							<p class="mui-ellipsis">C</p>
+						</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media">
+					<a href="javascript:;">
+						<img class="mui-media-object mui-pull-left" src="images/touxiang.svg">
+						<div class="mui-media-body" id="someCard">							
+							<p class="mui-ellipsis">Python</p>
+						</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media">
+					<a href="javascript:;">
+						<img class="mui-media-object mui-pull-left" src="images/touxiang.svg">
+						<div class="mui-media-body" id="someCard">							
+							<p class="mui-ellipsis">HTML5</p>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<!-- 邮件 -->
+		<div class="mui-control-content" id="discovery">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell mui-media">
+					<a href="javascript:;">
+						<img class="mui-media-object mui-pull-left" src="images/pengyouquan.svg">
+						<div class="mui-media-body" id="someCard">							
+							<p class="mui-ellipsis">朋友圈</p>
+						</div>
+					</a>
+				</li>
+				<li id="specialLi"></li>
+				<li class="mui-table-view-cell mui-media">
+					<a href="javascript:;">
+						<img class="mui-media-object mui-pull-left" src="images/saoyisao.svg">
+						<div class="mui-media-body" id="someCard">							
+							<p class="mui-ellipsis">扫一扫</p>
+						</div>
+					</a>
+				</li>
+				<li id="specialLi"></li>
+				<li class="mui-table-view-cell mui-media">
+					<a href="javascript:;">
+						<img class="mui-media-object mui-pull-left" src="images/gouwu.svg">
+						<div class="mui-media-body" id="someCard">							
+							<p class="mui-ellipsis">购物</p>
+						</div>
+					</a>
+				</li>
+				<li id="specialLi"></li>				
+				<li class="mui-table-view-cell mui-media">
+					<a href="javascript:;">
+						<img class="mui-media-object mui-pull-left" src="images/xiaochengxu.svg">
+						<div class="mui-media-body" id="someCard">							
+							<p class="mui-ellipsis">小程序</p>
+						</div>
+					</a>
+				</li>	
+			</ul>
+		</div>
+		<!-- 设置 -->
+		<div class="mui-control-content" id="myself">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell mui-media" id="myLi">
+					<a href="javascript:;">
+						<img class="mui-media-object mui-pull-left" src="images/touxiang3.svg">
+						<div class="chat-date" id="erweima"></div>
+						<div class="mui-media-body">
+							wjcIvan
+							<p class="mui-ellipsis">微信号：DragonHeart147</p>
+						</div>
+					</a>
+				</li>
+				<li id="specialLi"></li>
+				<li class="mui-table-view-cell mui-media">
+					<a href="javascript:;">
+						<img class="mui-media-object mui-pull-left" src="images/qianbao.svg">
+						<div class="mui-media-body" id="someCard">							
+							<p class="mui-ellipsis">钱包</p>
+						</div>
+					</a>
+				</li>				
+				<li id="specialLi"></li>
+				<li class="mui-table-view-cell mui-media">
+					<a href="javascript:;">
+						<img class="mui-media-object mui-pull-left" src="images/shoucang.svg">
+						<div class="mui-media-body" id="someCard">							
+							<p class="mui-ellipsis">收藏</p>
+						</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media">
+					<a href="javascript:;">
+						<img class="mui-media-object mui-pull-left" src="images/kabao.svg">
+						<div class="mui-media-body" id="someCard">							
+							<p class="mui-ellipsis">卡包</p>
+						</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media">
+					<a href="javascript:;">
+						<img class="mui-media-object mui-pull-left" src="images/biaoqing.svg">
+						<div class="mui-media-body" id="someCard">							
+							<p class="mui-ellipsis">表情</p>
+						</div>
+					</a>
+				</li>
+				<li id="specialLi"></li>
+				<li class="mui-table-view-cell mui-media">
+					<a href="javascript:;">
+						<img class="mui-media-object mui-pull-left" src="images/shezhi.svg">
+						<div class="mui-media-body" id="someCard">							
+							<p class="mui-ellipsis">设置</p>
+						</div>
+					</a>
+				</li>	
+			</ul>
+		</div>
+	</div>	
+	<script src="js/mui.min.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		mui.init();
+	</script>
+</body>
+
+</html>
