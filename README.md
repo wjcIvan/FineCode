@@ -56,6 +56,11 @@ IDE:Android Studio
 介绍:憨憨毕设 只得了B  
 IDE:Android Studio + eclipse  
 技术:Android + java  
+### WechatForH5
+仿微信h5 app  
+介绍:简单的布局  
+IDE:sublime text 3  
+技术:mui + h5  
 ### cnvdSpider
 cnvd爬虫  
 介绍:这个网站十分恶心 各种反爬 没辙 告辞  
