@@ -1,16 +1,24 @@
 ## 个人代码记录
 ### Blog
-#### 说明  
 个人博客网站  
 介绍:java web课程设计 一个很low的个人博客  
 IDE:myeclipse  
 技术:java + mssql  
+### CnvdSpider  
+cnvd爬虫  
+介绍:这个网站十分恶心 各种反爬 没辙 告辞  
+IDE:pycharm  
+技术:py2  
 ### DouyuH5App
-#### 说明  
 仿斗鱼H5APP  
 介绍:h5课程设计 简单模仿斗鱼做了静态界面 部分几个用了斗鱼的api 动态加载直播间信息 纯属手撸 一个下午一个界面的那种   
 IDE:HBuilder  
 技术:vue + h5  
+### SSH
+员工管理系统  
+介绍:慕课网上的 fork的 瞎写的  
+IDE:eclipse  
+技术:java + sqlserver  
 ### MavenScrapy  
 maven爬虫  
 介绍:fork的 然后自己做了适配 爬取中央仓库的所有jar信息  
@@ -41,11 +49,6 @@ IDE:pycharm
 介绍:[备案网](https://beian.miit.gov.cn/#/Integrated/recordQuery) 这个憨憨网站终于改版了 于是反手就做了个工具  
 IDE:pycharm  
 技术:py3 + selenium  
-### SSH
-员工管理系统  
-介绍:慕课网上的 fork的 瞎写的  
-IDE:eclipse  
-技术:java + sqlserver  
 ### SoccerApp  
 足球队管理App  
 介绍:课堂练手作业  
@@ -61,8 +64,3 @@ IDE:Android Studio + eclipse
 介绍:简单的布局  
 IDE:sublime text 3  
 技术:mui + h5  
-### cnvdSpider
-cnvd爬虫  
-介绍:这个网站十分恶心 各种反爬 没辙 告辞  
-IDE:pycharm  
-技术:py2  
