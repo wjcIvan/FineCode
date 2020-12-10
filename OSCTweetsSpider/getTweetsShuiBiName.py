@@ -2,10 +2,12 @@
 # python2
 # @author wjcIvan
 # @creatTime 2020/08/04
-# selenium webdriver chrome chrome驱动 环境啥的请自行安装
+# @updateTime 2020/11/16
+# selenium webdriver chrome chromedriver 环境啥的请自行安装
 
 import json
 import time
+import traceback
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 import sys
@@ -18,6 +20,7 @@ sys.setdefaultencoding('utf-8')
 
 all_comment_user_dict = {}
 all_like_user_dict = {}
+user_home_page_dict = {}
 
 
 # 初始化driver
@@ -60,19 +63,21 @@ def tweet_driver(driver):
 
     print "滴滴滴 到头了"
 
-    last_time = "今天"
-    # 只获取今天和昨天 两天的动弹 可以改成你想要的比如【今天 昨天 前天 08/01】
-    while "08/16" not in last_time:
+    last_time = driver.find_element_by_xpath("//*[@id='tweetList']/div[1]/div[last()]//*[@class='date']").text
+    print "滑到哪天了:" + last_time
+    # 只获取今天的动弹 可以改成你想要的比如【今天 昨天 前天 08/01】
+    while "今天" not in last_time:
+        print "滑到哪天了:" + last_time
         # 这里可以不滑/sleep 但是不知道为什么偶尔会出错 所以还是滑吧 我也不想的
         driver.execute_script('window.scrollTo(0,document.body.scrollHeight)')
         time.sleep(3)
-        # 获取当前界面最后一条动弹的时间
+        # 获取当前界面最后一条动弹的时间 但是刚开始的时候获取到为空 不清楚原因
         last_time = driver.find_element_by_xpath("//*[@id='tweetList']/div[1]/div[last()]//*[@class='date']").text
         print last_time
         # 点击 查看更多动弹
         try:
             driver.find_element_by_xpath("//a[@class='ui fluid button load-more-button']").click()
-        except:
+        except Exception as e:
             print "有点小问题 再划一下"
         # 给页面加载的时间 网速好的话给少点 自信的话可以不给
         time.sleep(3)
@@ -102,27 +107,39 @@ def comment_driver(driver):
 
     # 先滑三次 这里可以优化一下
     for i in range(3):
-        if_end = driver.find_elements_by_xpath("//div[@class='list-container-last-tips']")
-        if len(if_end) == 1:
+        if_end = driver.find_element_by_xpath("//div/p[@class='infinite-scroll-last']").get_attribute("style")
+        if_end_2 = driver.find_elements_by_xpath("//div[@class='list-container-last-tips']")
+        if if_end == 'display: block;' or len(if_end_2) == 1:
             break
         driver.execute_script('window.scrollTo(0,document.body.scrollHeight)')
         # 给页面加载的时间 网速好的话给少点
         time.sleep(3)
 
-    # 判断评论界面是否需要点击加载更多 判断依据为是否存在class='list-container-last-tips'的div【没有更多内容】
-    if_end = driver.find_elements_by_xpath("//div[@class='list-container-last-tips']")
-    while len(if_end) != 1:
-        # 你都滑完三次了 如果还没有出现 【没有更多内容】的标志 那就说明需要点击【更多评论】
-        try:
-            driver.find_element_by_xpath("//a[@class='ui fluid button load-more-button']").click()
-        except:
-            print "有点小问题 再划一下"
-            continue
-        time.sleep(3)
+    # 判断评论界面是否需要点击加载更多 判断依据为是否存在class='infinite-scroll-last'的div/p【没有更多内容】 存在即display: block；
+    if_end = driver.find_element_by_xpath("//div/p[@class='infinite-scroll-last']").get_attribute("style")
+    # osc似乎更改了评论区的前端样式 【没有更多内容】的标志 也会在这里出现
+    if_end_2 = driver.find_elements_by_xpath("//div[@class='list-container-last-tips']")
+    error_count = 0
+    while if_end != 'display: block;' and len(if_end_2) != 1:
+        # 异常3次就放弃吧
+        if error_count > 3:
+            break
+
         # 这里可以不滑/sleep 但是不知道为什么偶尔会出错 所以还是滑吧 我也不想的
         driver.execute_script('window.scrollTo(0,document.body.scrollHeight)')
+        time.sleep(3)
+
+        # 你都滑完 3 + 1 次了 如果还没有出现 【没有更多内容】的标志 那就说明需要点击【更多评论】
+        try:
+            driver.find_element_by_xpath("//a[@class='ui fluid button load-more-button']").click()
+        except Exception as e:
+            error_count += 1
+            print "有点小问题 再划一下"
+            continue
+
         # 滑一次取一次
-        if_end = driver.find_elements_by_xpath("//div[@class='list-container-last-tips']")
+        if_end = driver.find_element_by_xpath("//div/p[@class='infinite-scroll-last']").get_attribute("style")
+        if_end_2 = driver.find_elements_by_xpath("//div[@class='list-container-last-tips']")
 
     # 获取评论用户list
     comment_user_list = driver.find_elements_by_xpath(
@@ -149,12 +166,28 @@ def main():
 
         for i in comment_set:
             print "spider it : ", i
-            driver.get(i)
-            time.sleep(3)
+            # 运行一段时间后有概率出现异常 先用笨比方式重试几次
+            try:
+                driver.get(i)
+                time.sleep(3)
+            except Exception as e1:
+                try:
+                    print "出现了异常 " + traceback.format_exc() + ",重试第一次"
+                    driver.get(i)
+                    time.sleep(3)
+                except Exception as e2:
+                    try:
+                        print "出现了异常 " + traceback.format_exc() + ",重试第二次"
+                        driver.get(i)
+                        time.sleep(3)
+                    except Exception as e3:
+                        print "出现了异常 " + traceback.format_exc() + ",你走吧，爹地不要你了"
+                        continue
+
             try:
                 comment_user_list, like_user_set = get_comment_user_name_top_shui(driver)
             except Exception as e:
-                print "出现了异常 " + str(e) + ",跳过1"
+                print "出现了异常 " + traceback.format_exc() + ",跳过1"
                 continue
             get_like_user_dict_all(like_user_set)
             if comment_user_list is None:
@@ -163,10 +196,12 @@ def main():
 
         all_like_user_list_new = sorted(all_like_user_dict.iteritems(), key=lambda x: x[1], reverse=True)
         all_comment_user_list_new = sorted(all_comment_user_dict.iteritems(), key=lambda x: x[1], reverse=True)
+        user_home_page_dict_new = sorted(user_home_page_dict.iteritems(), key=lambda x: x[1], reverse=True)
         write_list('likeUserNameDict.txt', all_like_user_list_new)
         write_name('likeUserNameDict2.txt', all_like_user_list_new)
         write_list('commentUserNameDict.txt', all_comment_user_list_new)
         write_name('commentUserNameDict2.txt', all_comment_user_list_new)
+        write_name('userHomePageDict.txt', user_home_page_dict_new)
 
         # 按权重计分 这一段先随便写写
         s = 0
@@ -219,7 +254,7 @@ def main():
         write_name('oscUserNameList2.txt', top_osc_user_score_list_new)
 
     except Exception as e:
-        print "出现了异常 " + str(e) + ",跳过2"
+        print "出现了异常 " + traceback.format_exc() + ",跳过2"
 
     driver.quit()
 
@@ -237,14 +272,18 @@ def get_user_name(driver):
 # 获取用户字典 评论set
 def get_user_name_top_shui(driver):
     user_dict = {}
+    global user_home_page_dict
     user_list, comment_list = tweet_driver(driver)
     for user in user_list:
         name = user.text
+        home_page = user.get_attribute('href')
         if name != "":
             if name in user_dict:
                 user_dict[name] += 1
             else:
                 user_dict[name] = 1
+            key = "[{}]({})".format(name, home_page)
+            user_home_page_dict[name] = key
 
     comment_set = set()
     for comment in comment_list:
@@ -257,21 +296,28 @@ def get_user_name_top_shui(driver):
 # 获取评论用户字典 点赞用户set
 def get_comment_user_name_top_shui(driver):
     comment_user_dict = {}
+    global user_home_page_dict
     comment_user_list, like_user_list = comment_driver(driver)
     if comment_user_list is not None:
         for comment_user in comment_user_list:
             name = comment_user.text
+            home_page = comment_user.get_attribute('href')
+            key = "[{}]({})".format(name, home_page)
             if name != "":
                 if name in comment_user_dict:
                     comment_user_dict[name] += 1
                 else:
                     comment_user_dict[name] = 1
+            user_home_page_dict[name] = key
 
     # 考虑到动弹点赞可以卡bug 重复点赞 所以先去重
     like_user_set = set()
     for like_user in like_user_list:
         name = like_user.get_attribute('title')
         like_user_set.add(name)
+        home_page = like_user.get_attribute('href')
+        key = "[{}]({})".format(name, home_page)
+        user_home_page_dict[name] = key
 
     return comment_user_dict, like_user_set
 
@@ -374,5 +420,5 @@ if __name__ == "__main__":
         # linux需使用以下注释代码
         # display.stop()
     except Exception as e:
-        print "出现了异常 " + str(e) + "结束任务"
+        print "出现了异常 " + traceback.format_exc() + "结束任务"
         sys.exit(0)
