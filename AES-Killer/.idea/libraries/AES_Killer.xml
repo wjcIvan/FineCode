@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="AES_Killer">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/AES_Killer.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
