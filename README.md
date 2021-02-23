@@ -1,4 +1,9 @@
-## 个人代码记录
+## 个人代码记录  
+### AES-Killer  
+burpsuite插件  
+介绍: 解密AES/CFB/NoPadding  
+IDE:IDEA  
+技术:java  
 ### Blog
 个人博客网站  
 介绍:java web课程设计 一个很low的个人博客  
@@ -6,7 +11,7 @@ IDE:myeclipse
 技术:java + mssql  
 ### CnvdSpider  
 cnvd爬虫  
-介绍:这个网站十分恶心 各种反爬 没辙 告辞  
+介绍:这个网站十分和谐 各种反爬 没辙 告辞  
 IDE:pycharm  
 技术:py2  
 ### DouyuH5App
@@ -34,7 +39,7 @@ IDE:Android Studio
 介绍:爬取一段时间内osc的动弹数 点赞数 评论数 并做统计排名  
 IDE:pycharm  
 技术:py2 + selenium  
-### OSChina-app
+### OSChina-app  
 仿开源中国APP  
 介绍:安卓课程设计 按照黑马还是啥的(找不到了) 视频课程做的 然后加入了一些其他功能 比较low  
 IDE:Android Studio  
@@ -44,7 +49,7 @@ readfree 爬虫
 介绍:python课程设计(当时我还是一个憨憨萌新) 一个很low的爬虫   
 IDE:pycharm  
 技术:py2 + mongo  
-### RecordSpider
+### RecordSpider  
 备案爬虫  
 介绍:[备案网](https://beian.miit.gov.cn/#/Integrated/recordQuery) 这个憨憨网站终于改版了 于是反手就做了个工具  
 IDE:pycharm  
@@ -53,7 +58,7 @@ IDE:pycharm
 足球队管理App  
 介绍:课堂练手作业  
 IDE:Android Studio  
-技术:Android    
+技术:Android  
 ### UnmannedManagementLibrary  
 无人管理的图书馆  
 介绍:憨憨毕设 只得了B  
@@ -64,3 +69,9 @@ IDE:Android Studio + eclipse
 介绍:简单的布局  
 IDE:sublime text 3  
 技术:mui + h5  
+### ZentaoAPI
+禅道API  
+介绍:创建bug  
+IDE:IDEA  
+技术:java  
+
