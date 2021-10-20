@@ -31,7 +31,7 @@ IDE:pycharm
 技术:py3 + scrapy  
 ### MySimpleMP3Player  
 音乐播放器  
-介绍:安卓课上的小案例 适合入门
+介绍:安卓课上的小案例 适合入门  
 IDE:Android Studio  
 技术:android  
 ### OSCTweetsSpider
